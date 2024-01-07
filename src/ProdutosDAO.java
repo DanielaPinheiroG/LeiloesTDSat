@@ -91,7 +91,7 @@ public class ProdutosDAO {
             System.out.println("Não foi possível vender o produto " + ex.getMessage());
         }
             
-    }   
-
+    } 
+    
 }
 
