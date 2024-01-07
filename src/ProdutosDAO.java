@@ -45,7 +45,7 @@ public class ProdutosDAO {
         } catch (SQLException ex) {
             System.out.println("Não foi possível cadastrar o produto " + ex.getMessage());
         }
-                
+
     }
     
     public ArrayList<ProdutosDTO> listarProdutos(){
@@ -76,6 +76,7 @@ public class ProdutosDAO {
         
     }
     
+
     public void venderProduto (int id){
         // Preparando sql statmente para atualização no BD
         String sql = "UPDATE produtos SET status = ? WHERE Id = ?";
@@ -91,5 +92,6 @@ public class ProdutosDAO {
         }
             
     }   
+
 }
 
