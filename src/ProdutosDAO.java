@@ -45,9 +45,7 @@ public class ProdutosDAO {
         } catch (SQLException ex) {
             System.out.println("Não foi possível cadastrar o produto " + ex.getMessage());
         }
-        
-        
-        
+                
     }
     
     public ArrayList<ProdutosDTO> listarProdutos(){
@@ -78,8 +76,20 @@ public class ProdutosDAO {
         
     }
     
-    
-    
-        
+    public void venderProduto (int id){
+        // Preparando sql statmente para atualização no BD
+        String sql = "UPDATE produtos SET status = ? WHERE Id = ?";
+              
+        try {
+            PreparedStatement prep = this.conn.prepareStatement(sql);
+            prep.setString(1, "Vendido");
+            prep.setInt(2, id);
+            JOptionPane.showMessageDialog(null, "Produto vendido com sucesso");
+            
+        } catch (SQLException ex) {
+            System.out.println("Não foi possível vender o produto " + ex.getMessage());
+        }
+            
+    }   
 }
 
